@@ -15,7 +15,7 @@ export const INPUT_FIELD_LENGTH = {
     AUTH: {
         EMAIL: { MIN: 5, MAX: 254 },
         PASSWORD: { MIN: 8, MAX: 72 },
-        OTP: { MIN: 6, MAX: 6 },
+        OTP: { LENGTH: 6 },
         TOKEN: { MIN: 100, MAX: 2048 },
         REFRESH_TOKEN: { MIN: 100, MAX: 2048 },
         VERIFICATION_CODE: { MIN: 4, MAX: 10 },
