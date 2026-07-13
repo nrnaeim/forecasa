@@ -1,11 +1,12 @@
 //?==================================================================
 //? Validation Messages
 //?==================================================================
+type DataType = "string" | "number" | "array" | "boolean" | "ISO date string"
 export const INPUT_VALIDATION_MESSAGES = {
     //*==== Type and Requirement ==========================================
     REQUIRE: (field: string) => `${field} is required`,
-    TYPE: (field: string, type: "string" | "number" | "array") => `${field} must be ${type}`,
-    REQUIRE_TYPE: (field: string, type: "string" | "number" | "array") => `${field} is required and must be ${type}`,
+    TYPE: (field: string, type: DataType) => `${field} must be ${type}`,
+    REQUIRE_TYPE: (field: string, type: DataType) => `${field} is required and must be ${type}`,
     INVALID: (field: string) => `Invalid ${field}`,
 
     //*==== String =========================================================
@@ -27,6 +28,7 @@ export const INPUT_VALIDATION_MESSAGES = {
     MIN_ITEMS: (field: string, count: number) => `${field} must have at least ${count} item(s)`,
     MAX_ITEMS: (field: string, count: number) => `${field} must have at most ${count} item(s)`,
     EXACT_ITEMS: (field: string, count: number) => `${field} must have exactly ${count} item(s)`,
+    ENUM: (field: string, values: readonly string[]) => `${field} must be ${values.join(" or ")}`,
 
     //*==== Password ==========================================================
     PASSWORD_MISMATCH: "Confirm password does not match",
